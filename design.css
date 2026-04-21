@@ -1,0 +1,313 @@
+/* Reset CSS e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--cor-texto);
+  background-color: var(--cor-primaria);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Variáveis CSS */
+:root {
+  --cor-primaria: #0F1419;
+  --cor-secundaria-gradiente: linear-gradient(135deg, #00FF00, #00D9FF);
+  --cor-destaque: #00FF00;
+  --cor-neutra: #FFFFFF;
+  --cor-texto: #E0E0E0;
+  --titulo-fonte: 'Poppins', sans-serif;
+  --titulo-tamanho: 48px;
+  --subtitulo-tamanho: 24px;
+  --corpo-tamanho: 16px;
+  --botao-tamanho: 16px;
+  --sombra: 0 4px 8px rgba(0, 255, 0, 0.3);
+  --transicao: all 0.3s ease;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+  font-family: var(--titulo-fonte);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--titulo-tamanho);
+}
+
+h2 {
+  font-size: var(--subtitulo-tamanho);
+}
+
+p {
+  font-size: var(--corpo-tamanho);
+}
+
+button {
+  font-family: var(--titulo-fonte);
+  font-weight: bold;
+  font-size: var(--botao-tamanho);
+}
+
+/* Header fixo com navegação responsiva */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--cor-primaria);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: var(--sombra);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  color: var(--cor-destaque);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 2rem;
+}
+
+.menu a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  transition: var(--transicao);
+}
+
+.menu a:hover {
+  color: var(--cor-destaque);
+}
+
+/* Hero section com gradiente e imagem */
+.hero {
+  height: 100vh;
+  background: var(--cor-secundaria-gradiente);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  color: var(--cor-neutra);
+  animation: fadeIn 2s ease-in;
+}
+
+/* Cards para cenários, features e preços */
+.card {
+  background-color: var(--cor-neutra);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.5);
+}
+
+/* Tabela comparativa */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 1rem;
+  border: 1px solid var(--cor-texto);
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: var(--cor-destaque);
+  color: var(--cor-primaria);
+}
+
+/* Botões com hover effects e glow */
+.btn {
+  background: var(--cor-secundaria-gradiente);
+  color: var(--cor-primaria);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicao);
+  box-shadow: var(--sombra);
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px var(--cor-destaque);
+  transform: scale(1.05);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px var(--cor-destaque); }
+  50% { box-shadow: 0 0 20px var(--cor-destaque); }
+  100% { box-shadow: 0 0 5px var(--cor-destaque); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+.glow {
+  animation: glow 2s infinite;
+}
+
+/* Efeitos de sombra e profundidade */
+.shadow {
+  box-shadow: var(--sombra);
+}
+
+.depth {
+  perspective: 1000px;
+}
+
+/* Padrões geométricos no background */
+.pattern {
+  background-image: radial-gradient(circle, var(--cor-destaque) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+/* Formulários estilizados */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--cor-texto);
+  border-radius: 4px;
+  background-color: var(--cor-neutra);
+  color: var(--cor-primaria);
+}
+
+/* Footer responsivo */
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Transições suaves */
+* {
+  transition: var(--transicao);
+}
+
+/* Responsividade - Mobile-first */
+@media (max-width: 768px) {
+  :root {
+    --titulo-tamanho: 32px;
+    --subtitulo-tamanho: 20px;
+    --corpo-tamanho: 14px;
+    --botao-tamanho: 14px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .menu {
+    margin-top: 1rem;
+  }
+
+  .menu li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem;
+  }
+
+  .card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .comparison-table {
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --titulo-tamanho: 24px;
+    --subtitulo-tamanho: 18px;
+  }
+
+  header {
+    padding: 0.5rem 1rem;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1920px) {
+  :root {
+    --titulo-tamanho: 64px;
+    --subtitulo-tamanho: 32px;
+  }
+}
