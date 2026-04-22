@@ -206,8 +206,10 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width:900px) {
-      .hero .container, .verdade-inner { grid-template-columns:1fr; }
-      .hero-visual { display:none; }
+      .hero .container { grid-template-columns:1fr; }
+      .verdade-inner { grid-template-columns:1fr; }
+      .hero-visual { display:block; margin-top:40px; }
+      .dashboard { animation:none; }
       .cards-grid, .cards-grid-3, .cards-grid-3-full, .plans-grid { grid-template-columns:1fr; }
       .fluxo { grid-template-columns:1fr 1fr; }
       .fluxo::before { display:none; }
@@ -216,10 +218,12 @@
       .avd-table th, .avd-table td { padding:12px 10px; font-size:12px; }
     }
     @media (max-width:480px) {
+      .hero { padding-top:80px; }
       .hero h1 { font-size:34px; }
       .btn-lg { width:100%; justify-content:center; }
-      .hero-actions { flex-direction:column; align-items:flex-start; }
+      .hero-actions { flex-direction:column; align-items:stretch; }
       .fluxo { grid-template-columns:1fr; }
+      .logo-img { height:32px; }
     }
   </style>
 </head>
